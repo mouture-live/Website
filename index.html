@@ -158,15 +158,10 @@
     #hero-bg {
       position: absolute;
       inset: 0;
-      background: var(--noir);
+      background-image: url('image_van.png');
+      background-size: cover;
+      background-position: center center;
       overflow: hidden;
-    }
-
-    #hero-bg svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
     }
 
     #hero-overlay {
@@ -458,76 +453,6 @@
     }
 
     /* ============================================================
-       VIDÉO
-    ============================================================ */
-    #video { background: var(--brun); }
-
-    /* ---- YOUTUBE EMBED ----
-       REPLACE: une fois la vidéo disponible, remplacer
-       .video-placeholder par ce bloc :
-
-       <div class="video-embed-wrap">
-         <iframe
-           src="https://www.youtube.com/embed/VOTRE_VIDEO_ID?rel=0&modestbranding=1"
-           title="Mouture - Teaser" frameborder="0"
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-           allowfullscreen>
-         </iframe>
-       </div>
-    */
-
-    .video-embed-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 3px;
-      border: 1px solid rgba(216,166,87,0.18);
-    }
-
-    .video-embed-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-    }
-
-    .video-placeholder {
-      border: 1px solid rgba(216,166,87,0.15);
-      border-radius: 3px;
-      padding: 68px 24px;
-      text-align: center;
-      background: rgba(29,42,54,0.25);
-      position: relative;
-    }
-
-    .video-icon {
-      width: 58px;
-      height: 58px;
-      border: 1px solid rgba(216,166,87,0.48);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      color: var(--dore);
-    }
-
-    .video-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--creme);
-      margin-bottom: 10px;
-    }
-
-    .video-sub {
-      font-size: 14px;
-      color: var(--muted);
-      opacity: 0.6;
-      font-style: italic;
-    }
-
-    /* ============================================================
        FOOTER
     ============================================================ */
     footer {
@@ -598,67 +523,7 @@
   ============================================================ -->
   <section id="hero" class="has-grain">
 
-    <div id="hero-bg">
-      <!--
-        REPLACE IMAGE :
-        Supprimer le SVG ci-dessous et décommenter la ligne background-image dans le CSS #hero-bg.
-        Ou remplacer directement le style inline :
-        <div id="hero-bg" style="background-image:url('VOTRE_PHOTO.jpg');background-size:cover;background-position:center top;">
-      -->
-      <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <rect width="900" height="600" fill="#070503"/>
-        <!-- Faisceaux de lumière scène -->
-        <polygon points="140,-5  30,600 255,600" fill="rgba(201,107,44,.042)"/>
-        <polygon points="310,-5 200,600 425,600" fill="rgba(216,166,87,.055)"/>
-        <polygon points="480,-5 370,600 595,600" fill="rgba(216,166,87,.06)"/>
-        <polygon points="650,-5 540,600 765,600" fill="rgba(201,107,44,.04)"/>
-        <polygon points="820,-5 710,600 900,600" fill="rgba(216,166,87,.028)"/>
-        <!-- Sol scène -->
-        <rect x="0" y="490" width="900" height="110" fill="#110805"/>
-        <line x1="0" y1="490" x2="900" y2="490" stroke="rgba(216,166,87,.1)" stroke-width="1"/>
-        <!-- Réflexion sol -->
-        <rect x="0" y="491" width="900" height="20" fill="rgba(216,166,87,.018)"/>
-        <!-- Silhouette guitariste -->
-        <g fill="#030201">
-          <circle cx="258" cy="222" r="19"/>
-          <ellipse cx="258" cy="305" rx="23" ry="52"/>
-          <rect x="241" y="352" width="15" height="138" rx="6"/>
-          <rect x="260" y="352" width="15" height="138" rx="6"/>
-          <!-- Corps guitare -->
-          <ellipse cx="306" cy="318" rx="32" ry="36" transform="rotate(-6,306,318)"/>
-          <ellipse cx="294" cy="304" rx="10" ry="8" fill="#0a0806"/>
-          <!-- Manche guitare -->
-          <rect x="288" y="170" width="10" height="105" rx="3" transform="rotate(-9,293,222)"/>
-          <!-- Bras droit -->
-          <path d="M278,293 Q298,280 315,298" stroke="#030201" stroke-width="22" fill="none" stroke-linecap="round"/>
-          <!-- Bras gauche vers manche -->
-          <path d="M237,275 Q246,232 280,205" stroke="#030201" stroke-width="18" fill="none" stroke-linecap="round"/>
-        </g>
-        <ellipse cx="258" cy="390" rx="130" ry="190" fill="rgba(201,107,44,.036)"/>
-        <!-- Silhouette saxophoniste -->
-        <g fill="#030201">
-          <circle cx="630" cy="218" r="19"/>
-          <ellipse cx="630" cy="300" rx="23" ry="52"/>
-          <rect x="613" y="347" width="15" height="143" rx="6"/>
-          <rect x="632" y="347" width="15" height="143" rx="6"/>
-          <!-- Corps sax -->
-          <path d="M648,255 Q668,262 670,305 Q668,368 652,400 Q640,418 624,424" stroke="#030201" stroke-width="18" fill="none" stroke-linecap="round"/>
-          <!-- Pavillon sax -->
-          <ellipse cx="621" cy="427" rx="21" ry="12" transform="rotate(-10,621,427)"/>
-          <!-- Bras droit haut -->
-          <path d="M652,278 Q654,248 638,234" stroke="#030201" stroke-width="19" fill="none" stroke-linecap="round"/>
-          <!-- Bras gauche -->
-          <path d="M609,290 Q624,308 650,314" stroke="#030201" stroke-width="17" fill="none" stroke-linecap="round"/>
-        </g>
-        <ellipse cx="630" cy="385" rx="130" ry="190" fill="rgba(216,166,87,.032)"/>
-        <!-- Sources lumineuses en hauteur -->
-        <circle cx="140" cy="16" r="10" fill="rgba(216,166,87,.3)"/>
-        <circle cx="310" cy="8"  r="12" fill="rgba(201,107,44,.38)"/>
-        <circle cx="480" cy="10" r="12" fill="rgba(216,166,87,.28)"/>
-        <circle cx="650" cy="14" r="10" fill="rgba(201,107,44,.22)"/>
-        <circle cx="820" cy="18" r="8"  fill="rgba(216,166,87,.18)"/>
-      </svg>
-    </div>
+    <div id="hero-bg"></div>
 
     <div id="hero-overlay"></div>
 
@@ -712,10 +577,7 @@
         <p class="event-day pf">27</p>
         <p class="event-month">Mai &nbsp;2026</p>
         <div class="event-divider"></div>
-        <p class="event-venue">
-          <!-- REPLACE: remplacer par le nom et l'adresse du lieu -->
-          <span style="opacity:.44; font-style:italic">Lieu à confirmer</span>
-        </p>
+        <p class="event-venue">Ferme à Jazz &mdash; Bourg-en-Bresse</p>
       </div>
     </div>
   </section>
@@ -731,7 +593,6 @@
       <div class="orn sec-sep"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
       <div class="contacts-grid">
 
-        <!-- REPLACE: numéro de Sarah -->
         <div class="contact-card">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
@@ -740,22 +601,11 @@
             </svg>
           </div>
           <p class="contact-name">Sarah</p>
-          <p class="contact-value" style="opacity:.46; font-style:italic">06 XX XX XX XX</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="22" viewBox="0 0 160 22" aria-label="Téléphone" role="img" style="display:block;margin:0 auto">
+            <text x="80" y="16" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="rgba(245,241,232,0.62)">06 27 25 51 71</text>
+          </svg>
         </div>
 
-        <!-- REPLACE: numéro de Julien -->
-        <div class="contact-card">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <p class="contact-name">Julien</p>
-          <p class="contact-value" style="opacity:.46; font-style:italic">06 XX XX XX XX</p>
-        </div>
-
-        <!-- REPLACE: adresse email -->
         <div class="contact-card">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
@@ -764,7 +614,7 @@
             </svg>
           </div>
           <p class="contact-name">Email</p>
-          <p class="contact-value" style="opacity:.46; font-style:italic">contact@mouture.fr</p>
+          <p class="contact-value">contact@mouture.fr</p>
         </div>
 
       </div>
@@ -824,46 +674,7 @@
         <p class="player-note">Les extraits seront disponibles prochainement &mdash; ou intégrez un lien SoundCloud ci-dessus.</p>
       </div>
 
-      <!-- REPLACE: ajouter src="VOTRE_FICHIER.mp3" pour activer le player -->
-      <audio id="audio-player"></audio>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       VIDÉO
-  ============================================================ -->
-  <section id="video" class="has-grain">
-    <div class="inner reveal">
-      <p class="eyebrow">Visuels</p>
-      <h2 class="sec-title pf">Vidéo</h2>
-      <div class="orn sec-sep"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
-
-      <!--
-        REPLACE YOUTUBE :
-        Supprimer .video-placeholder et décommenter ce bloc :
-
-        <div class="video-embed-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/VOTRE_VIDEO_ID?rel=0&modestbranding=1"
-            title="Mouture - Teaser"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      -->
-
-      <div class="video-placeholder has-grain">
-        <div class="video-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <p class="video-title pf">Teaser à venir</p>
-        <p class="video-sub">Une vidéo viendra compléter cette page très prochainement.</p>
-      </div>
+      <audio id="audio-player" src="audio.mp3" preload="metadata"></audio>
 
     </div>
   </section>
