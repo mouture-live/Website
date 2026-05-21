@@ -530,7 +530,7 @@
     <div id="hero-content">
       <p class="hero-eyebrow">Duo musical</p>
       <h1 class="hero-title pf">Mouture</h1>
-      <p class="hero-sub">Folk &middot; Jazz &middot; Rock &middot; Voyage musical</p>
+      <p class="hero-sub">Electro &middot; Rock &middot; With Sax &middot; And the Machines</p>
       <div class="orn hero-orn">
         <div class="orn-line"></div>
         <div class="orn-diamond"></div>
@@ -601,9 +601,7 @@
             </svg>
           </div>
           <p class="contact-name">Sarah</p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="22" viewBox="0 0 160 22" aria-label="Téléphone" role="img" style="display:block;margin:0 auto">
-            <text x="80" y="16" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="rgba(245,241,232,0.62)">06 27 25 51 71</text>
-          </svg>
+          <canvas id="phone-sarah" width="160" height="22" aria-label="Téléphone de contact" role="img" style="display:block;margin:0 auto"></canvas>
         </div>
 
         <div class="contact-card">
@@ -692,6 +690,17 @@
        SCRIPTS
   ============================================================ -->
   <script>
+    // ----- PHONE CANVAS -----
+    (function(){
+      const c = document.getElementById('phone-sarah');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = 'rgba(245,241,232,0.62)';
+      ctx.font = '14px "Cormorant Garamond", Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(['06','27','25','51','71'].join('\u0020'), 80, 16);
+    })();
+
     // ----- AUDIO PLAYER -----
     const audio    = document.getElementById('audio-player');
     const barFill  = document.getElementById('bar-fill');
