@@ -514,6 +514,49 @@
       .contacts-grid { grid-template-columns: 1fr; }
     }
 
+
+    /* ============================================================
+       VIDEO CONCERT
+    ============================================================ */
+    #video { background: var(--brun); }
+
+    .video-wrap {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid rgba(216,166,87,0.18);
+      background: #000;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      display: block;
+      max-height: 420px;
+      object-fit: cover;
+    }
+
+    /* overlay grain sur la video */
+    .video-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to bottom,
+        transparent 60%,
+        rgba(13,10,8,0.35) 100%);
+    }
+
+    .video-caption {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.5;
+      text-align: center;
+      margin-top: 14px;
+      font-style: italic;
+    }
+
   </style>
 </head>
 <body>
@@ -565,20 +608,31 @@
 
 
   <!-- ============================================================
-       PREMIER CONCERT
+       DATES
   ============================================================ -->
   <section id="concert" class="has-grain">
     <div class="inner reveal">
       <p class="eyebrow">Agenda</p>
-      <h2 class="sec-title pf">Premier concert</h2>
+      <h2 class="sec-title pf">Dates</h2>
       <div class="orn sec-sep"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
-      <div class="event-card has-grain">
-        <p class="event-label">&#9734;&nbsp; Prochaine date</p>
-        <p class="event-day pf">27</p>
+
+      <!-- Date passée -->
+      <div class="event-card has-grain" style="opacity:0.52; margin-bottom:16px;">
+        <p class="event-label" style="color:var(--muted)">&#10003;&nbsp; Concert joué</p>
+        <p class="event-day pf" style="font-size:48px; color:var(--muted)">27</p>
         <p class="event-month">Mai &nbsp;2026</p>
         <div class="event-divider"></div>
         <p class="event-venue">Ferme à Jazz &mdash; Bourg-en-Bresse</p>
       </div>
+
+      <!-- Prochaine date -->
+      <div class="event-card has-grain">
+        <p class="event-label">&#9734;&nbsp; Prochaine date</p>
+        <p class="event-day pf" style="font-size:52px; letter-spacing:0.04em; color:var(--muted); font-style:italic;">à venir</p>
+        <div class="event-divider"></div>
+        <p class="event-venue" style="opacity:0.44; font-style:italic;">Date en cours de confirmation</p>
+      </div>
+
     </div>
   </section>
 
@@ -673,6 +727,35 @@
       </div>
 
       <audio id="audio-player" src="audio.mp3" preload="metadata"></audio>
+
+    </div>
+  </section>
+
+
+
+  <!-- ============================================================
+       VIDEO CONCERT
+       Fichier attendu : concert.mp4 (H.264), même dossier que index.html
+  ============================================================ -->
+  <section id="video" class="has-grain">
+    <div class="inner reveal">
+      <p class="eyebrow">Scène</p>
+      <h2 class="sec-title pf">Concert &mdash; 27 mai 2026</h2>
+      <div class="orn sec-sep"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
+
+      <div class="video-wrap">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          poster="image_van.png"
+        >
+          <!-- Format principal : MP4 H.264 -->
+          <source src="concert.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </div>
+      <p class="video-caption">Ferme à Jazz &mdash; Bourg-en-Bresse &mdash; 27 mai 2026</p>
 
     </div>
   </section>
