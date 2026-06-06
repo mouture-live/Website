@@ -566,28 +566,77 @@
   </style>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Mouture",
-  "url": "https://mouture-live.fr",
-  "description": "Duo musical Electro, Rock et Organique avec saxophone et machines.",
-  "genre": ["Electro", "Rock"],
-  "location": {
-    "@type": "Place",
-    "name": "Bourg-en-Bresse, France"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Mouture",
+    "url": "https://mouture-live.fr",
+    "description": "Duo musical Electro, Rock et Organique avec saxophone et machines. Julien à la guitare et au chant, Sarah au saxophone et au chant.",
+    "genre": ["Electro", "Rock", "Folk", "Jazz"],
+    "image": "https://mouture-live.fr/image_van.png",
+    "email": "contact@mouture-live.fr",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Bourg-en-Bresse, France"
+    },
+    "member": [
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Julien",
+          "description": "Guitare et chant"
+        },
+        "roleName": "Guitariste, chanteur"
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Sarah",
+          "description": "Saxophone et chant"
+        },
+        "roleName": "Saxophoniste, chanteuse"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/p/DZBHNXTJv7L/"
+    ]
   },
-  "event": {
+  {
+    "@context": "https://schema.org",
     "@type": "MusicEvent",
-    "name": "Concert Mouture à la Ferme à Jazz",
-    "startDate": "2026-05-27",
+    "name": "Concert Mouture - Ferme à Jazz",
+    "description": "Premier concert du duo Mouture - Electro, Rock et Organique avec saxophone et machines.",
+    "startDate": "2026-05-27T20:00:00+02:00",
+    "endDate": "2026-05-27T22:30:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "image": "https://mouture-live.fr/image_van.png",
+    "url": "https://mouture-live.fr/#concert",
     "location": {
       "@type": "Place",
       "name": "Ferme à Jazz",
-      "address": "Bourg-en-Bresse"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bourg-en-Bresse",
+        "addressRegion": "Ain",
+        "addressCountry": "FR"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ferme à Jazz",
+      "url": "https://mouture-live.fr"
+    },
+    "performer": {
+      "@type": "MusicGroup",
+      "name": "Mouture",
+      "url": "https://mouture-live.fr"
     }
   }
-}
+]
 </script>
 
 </head>
